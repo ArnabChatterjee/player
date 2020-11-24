@@ -23,25 +23,25 @@ Clone the repository: `git clone https://github.com/ArnabChatterjee/player.git`
 
 ### Running the application
 
-** Pre-requisite
-	a) backend services
-		- zookeeper should be up and running (Run ZooKeeper by opening a new cmd and type --> zkserver.cmd)
-		- kafka server should be up and running (for windows run --> kafka-server-start.bat .\config\server.properties)
-	b) Kafka topic "novice-players" should be created using the below command
-		kafka-topics.bat --create --zookeeper localhost:2181 -replication-factor 1 --partitions 1 --topic novice-players
-** Optional
-	a) To view the messages posted in Kafka run the below command
-		kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic novice-players
-	b) To view the data inserted in H2 database
-		http://localhost:8081/h2-console/login.do?jsessionid=394046b590d720ccb5604863b59b0576
-		Use the URL as jdbc:h2:mem:truelogic and default settings to login
-		To view the records in the Database run the below command
-			SELECT * FROM PLAYERS_EXPERT 
+	Pre-requisite
+		a) backend services
+			- zookeeper should be up and running (Run ZooKeeper by opening a new cmd and type --> zkserver.cmd)
+			- kafka server should be up and running (for windows run --> kafka-server-start.bat .\config\server.properties)
+		b) Kafka topic "novice-players" should be created using the below command
+			kafka-topics.bat --create --zookeeper localhost:2181 -replication-factor 1 --partitions 1 --topic novice-players
+	Optional
+		a) To view the messages posted in Kafka run the below command
+			kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic novice-players
+		b) To view the data inserted in H2 database
+			http://localhost:8081/h2-console/login.do?jsessionid=394046b590d720ccb5604863b59b0576
+			Use the URL as jdbc:h2:mem:truelogic and default settings to login
+			To view the records in the Database run the below command
+				SELECT * FROM PLAYERS_EXPERT 
 			
-** Running the test cases
+	Running the test cases
 	mvn compile install
 
-** Running the application standalone for further testing	
+### Running the application standalone for further testing	
     cd truelogic
     java -jar target/truelogic-api-0.1.0.jar
 
