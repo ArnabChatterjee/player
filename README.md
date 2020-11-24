@@ -25,8 +25,8 @@ Clone the repository: `git clone https://github.com/ArnabChatterjee/player.git`
 
 	Pre-requisite
 		a) backend services
-			- zookeeper should be up and running (Run ZooKeeper by opening a new cmd and type --> zkserver.cmd)
-			- kafka server should be up and running (for windows run --> kafka-server-start.bat .\config\server.properties)
+			- zookeeper should be up and running (Run ZooKeeper by opening a new cmd and type --> zkServer.cmd in windows or zkServer.sh in linux)
+			- kafka server should be up and running (for windows run --> kafka-server-start.bat ..\..\config\server.properties or kafka-server-start.sh ..\config\server.properties in linux)
 		b) Kafka topic "novice-players" should be created using the below command
 			kafka-topics.bat --create --zookeeper localhost:2181 -replication-factor 1 --partitions 1 --topic novice-players
 	Optional
